@@ -36,7 +36,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to destroy_user_session_path,class: 'nav-link text-light' do %>
+              <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-light' do %>
                 <i class="fas fa-sign-out-alt"></i> Log out
               <% end %>
             </li>
@@ -66,7 +66,9 @@
         </div>
       </div>
     </nav>
+    <main>
     <%= yield %>
+
     <footer>
       <div class="container mt-8">
         <div class="row">
