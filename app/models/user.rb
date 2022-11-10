@@ -8,4 +8,7 @@ class User < ApplicationRecord
 
   has_many :books, dependent: :destroy
 
+  def get_profile_image
+    (profile_image.attached?) ? profile_image : 'no_image.jpg'
+  end
 end
