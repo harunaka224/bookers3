@@ -1,4 +1,4 @@
 class Book < ApplicationRecord
   
-  belongs_to :users, dependent: :destroy
+  belongs_to :user, dependent: :destroy
 end
