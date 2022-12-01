@@ -2,7 +2,8 @@ main {
   background-image: url("/assets/book.jpeg");
   background-size: cover;
   background-position: center center;
-  padding-bottom: 175px;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: 600px;
+  
 }
