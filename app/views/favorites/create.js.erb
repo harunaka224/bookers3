@@ -1,0 +1,2 @@
+console.log ('create.js.erb')
+$("#btn_<%= @book.id %>").html("<%= j(render 'favorites/btn', book: @book) %>");

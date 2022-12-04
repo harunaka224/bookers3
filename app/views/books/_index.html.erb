@@ -18,7 +18,8 @@
       </td>
       <td><%= link_to book.title, book_path(book.id) %></td>
       <td><%= book.body %></td>
-      <td><% unless user_signed_in? && current_user.id == book.user_id %>
+      <td id="btn_<%= book.id %>">
+        　<% unless user_signed_in? && current_user.id == book.user_id %>
           <!-- 自分の投稿にはいいねができない -->
       　　　　<%= render "favorites/btn", book: book %> 
     　   　 <% end %>
