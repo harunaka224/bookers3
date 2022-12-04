@@ -4,6 +4,7 @@ class FavoritesController < ApplicationController
     book = Book.find(params[:book_id])
     @book_favorite = Favorite.new(user_id: current_user.id, book_id: params[:book_id])
     @book_favorite.save
+    flash[:notice] = '投稿に「いいね！」しました。'
     redirect_to request.referer
   end
   
