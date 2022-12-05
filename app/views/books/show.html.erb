@@ -25,7 +25,7 @@
           </tr>
         </tbody>
       </table>
-      <%= render "comments/index", book: @book %>
+      <%= render "comments/index", book: @book, user: @book_user %>
       <%= render "comments/form", book: @book, comment: @comment %>
     </div>
   </div>
