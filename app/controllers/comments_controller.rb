@@ -1,18 +1,20 @@
 class CommentsController < ApplicationController
 
   def create
-    book = Book.find(params[:book_id])
-    comment = current_user.comments.new(comment_params)
-    comment.book_id = book.id
-    comment.save
+    @book = Book.find(params[:book_id])
+    @book_user = @book.user
+    @comment = current_user.comments.new(comment_params)
+    @comment.book_id = @book.id
+    @comment.save
     flash[:notice] = '投稿にコメントしました。'
-    redirect_to request.referer
   end
 
   def destroy
-    Comment.find_by(id: params[:id], book_id: params[:book_id]).destroy
+    @book = Book.find(params[:book_id])
+    @book_user = @book.user
+    @comment = @book.comments.find(params[:id])
+    @comment.destroy
     flash[:notice] = 'コメントを削除しました。'
-    redirect_to request.referer
   end
 
   private
@@ -20,4 +22,5 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:comment)
   end
 end
+
 

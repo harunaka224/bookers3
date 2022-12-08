@@ -1,5 +1,5 @@
-<%= form_with(model:[book, comment]) do |f| %>
-  <%= f.text_area :comment, row: '5', placeholder: "コメント入力", class: "w-100" %>
+<%= form_with(model:[book, comment], local: false) do |f| %>
+  <%= f.text_area :comment, row: '5', placeholder: "コメント入力", class: "w-100 comment_form" %>
   <%= f.submit "送信", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
 <% end %>
 
